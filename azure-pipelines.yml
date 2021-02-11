@@ -1,0 +1,24 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+name: Azure Pipelines
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    pool:
+      name: Hosted Ubuntu 1604
+    steps:
+    - task: CmdLine@2
+      displayName: DISPLAY NAME
+      continueOnError: true
+      inputs:
+        script: 'COMMAND StarterAPIs.json'
+        workingDirectory: 'starter-code/automatedtesting/postman'
+    - task: CmdLine@2
+      displayName: DISPLAY NAME
+      inputs:
+        script: 'COMMAND'
+        workingDirectory: DEFAULT WORKING DIRECTORY
